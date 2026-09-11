@@ -16,6 +16,9 @@ and every release, so the API they describe is the API that version ships.
 | `skills/precept-settings` | `precept.json`, environment overlays, `PRECEPT_*` variables, startup and a suite's own settings. |
 | `skills/precept-running` | Running, listing and filtering tests, environments, artifacts and CI. |
 | `skills/precept-modules` | `Rest`, `Browser`, `Db`, `TestData`, `Rpc` and screenplay, one example each. |
+| `skills/precept-page-objects` | Designing page objects and components on `IPageContext`, and when screenplay is the better shape. |
+| `skills/precept-migrating` | Moving a suite from NUnit, xUnit, MSTest, SpecFlow, FluentAssertions, Selenium or RestSharp, with every old test accounted for. |
+| `skills/precept-pipelines` | Running the suite on Azure Pipelines with the shipped pipeline and job template, settings as `PRECEPT_*` variables, TRX and attachments, exit codes. |
 | `.github/agents/precept.agent.md` | A GitHub Copilot agent that writes and runs Precept tests and brings the Precept MCP server with it. |
 | `.github/instructions/precept.instructions.md` | A one-page always-on summary for Copilot. |
 

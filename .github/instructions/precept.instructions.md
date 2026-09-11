@@ -15,4 +15,4 @@ Precept is a .NET 10 test automation framework on Microsoft.Testing.Platform: it
 - Settings live in `precept.json` beside the project, overlaid by `precept.{environment}.json`, then `PRECEPT_*` variables (`Web:Headless` → `PRECEPT_WEB__HEADLESS`). A module's section is only read when its `AddPrecept…` is called in `IPreceptStartup.ConfigureServices`.
 - Run with `dotnet test --project <csproj>` (needs the MTP runner in the root `global.json`) or `dotnet run --project <dir> -- --precept-filter "smoke and not wip"`. A filter value must not start with `@`.
 
-Use the skills under `.github/skills/` for the detail of each of these, and the `Precept` agent in `.github/agents/` for a change that spans them.
+Use the skills under `.github/skills/` for the detail of each of these — including `precept-page-objects` for a page object and `precept-migrating` for tests moved in from another framework, `precept-pipelines` for Azure Pipelines — and the `Precept` agent in `.github/agents/` for a change that spans them.
