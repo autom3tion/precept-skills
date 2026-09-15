@@ -2,7 +2,7 @@
 
 Guidance for coding agents working in a test project built on
 [Precept](https://autom3tion.github.io/precept-docs/), a .NET 10 test automation framework on
-Microsoft.Testing.Platform. Describes **Precept 0.10.0**.
+Microsoft.Testing.Platform. Describes **Precept 0.11.0**.
 
 Nothing is authored here. These files are published from the Precept repository on every change
 and every release, so the API they describe is the API that version ships.
