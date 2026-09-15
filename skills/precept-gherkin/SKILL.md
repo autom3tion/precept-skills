@@ -50,5 +50,6 @@ public sealed class SignInSteps
 5. Step traces land in the test's own output, not the console. To see a passing scenario's steps: `dotnet run --project <dir> -- --output Detailed --show-stdout All`.
 6. Keep `.feature` files out of `bin/`; a copy there is generated twice and every scenario is discovered twice. `*.feature.cs` is generated and belongs in `.gitignore`. If generated code looks stale, delete `**/*.feature.cs` and rebuild.
 7. A missing step definition reports as pending by default (`MissingOrPendingStepsOutcome`); set it to `Error` on CI.
+8. A `{{token}}` in a step argument — `When I create the brand "Autotest_{{unique}}"` — is plain text until the step definition resolves it: `TestData.Resolve(name)`. Nothing expands step arguments, doc strings or table cells on the step's behalf, so typed parameters and tables bound to objects reach Reqnroll's conversion exactly as written.
 
 Done when the scenario is listed by `--list-tests` under its feature name and "Go to test" lands on the `Scenario:` line of the `.feature` file.
