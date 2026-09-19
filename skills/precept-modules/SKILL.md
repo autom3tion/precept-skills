@@ -39,7 +39,7 @@ await Assert.That(page.GetByTestId("total"), "the basket total").ToHaveTextAsync
 var bob = await Browser.StartAsync("bob");                  // a second isolated identity in the same test
 ```
 
-Page objects inject `IPageContext` and read `.Page` on every use. Anything Playwright offers that Precept does not mirror goes through `ToSatisfyAsync("be …", expect => expect.ToXAsync(...))`. Failure screenshots, traces and console errors are captured by the module; `Web:FailOnConsoleErrors` turns a logged error into a failure after the last line.
+Page objects inject `IPageContext` and read `.Page` on every use. Anything Playwright offers that Precept does not mirror goes through `ToSatisfyAsync("be …", expect => expect.ToXAsync(...))`. Screenshots, traces, video and HAR are each a `Web:Screenshot`, `Web:Trace`, `Web:Video` or `Web:Har` setting of `Never`, `OnFailure` or `Always`; screenshot and trace default to `OnFailure`, video and HAR to `Never`. Console errors are logged, and `Web:FailOnConsoleErrors` turns a logged error into a failure after the last line.
 
 ## Database
 
