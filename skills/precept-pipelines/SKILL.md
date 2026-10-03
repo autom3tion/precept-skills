@@ -1,6 +1,6 @@
 ---
 name: precept-pipelines
-description: "Run a Precept suite on Azure Pipelines: adopt the shipped pipeline and job template, set its parameters, pass settings as PRECEPT_* variables, publish the TRX with attachments, and read exit codes. Use when adding or changing a pipeline, a scheduled run, a variable group, or a CI failure in a Precept project."
+description: "Use when adding or changing an Azure Pipelines run of a Precept suite — a pipeline, a scheduled run, a variable group, published test results — or when the suite fails on CI but not locally."
 ---
 
 # A Precept suite on Azure Pipelines
@@ -38,12 +38,11 @@ A second entry file over the same template is how a nightly, a release smoke che
 
 | Symptom | Cause |
 | --- | --- |
-| "Testing with VSTest target is no longer supported" | No `global.json` with the MTP runner at the repository root. |
-| The run fails opening a response file named after a tag | The filter starts with `@`. |
 | Exit code 8 | The filter matched nothing, or the overlay's `Filter:Exclude` removed everything. |
 | "reporting is CI-only and this run is not on a build agent" on an agent | No CI variable; set `PRECEPT_ISCONTINUOUSINTEGRATION=true`. |
 | ReportPortal rejects the key | The variable group or variable name does not match, so the literal `$(reportPortalApiKey)` was sent. |
 | Azure DevOps creates the run but refuses the results | The build service identity lacks test management rights on the project. |
-| Every scenario discovered twice | A `.feature` file under `bin` was globbed. |
+
+Anything not specific to the pipeline is in `precept-debugging-runs`.
 
 Done when the pipeline uses the shipped template, secrets come from a variable group, and one run has produced a TRX with attachments under the intended environment.
