@@ -34,6 +34,7 @@ description: "Use when moving an existing .NET test suite to Precept — migrate
 | FluentAssertions `x.Should().Be(y)`, `.NotBeNull()`, `.Contain(i)`, `.HaveCount(n)`, `.BeTrue()` | `await Assert.That(x).ToBeEqualAsync(y)`, `.Not.ToBeNullAsync()`, `.ToContainAsync(i)`, `.ToHaveCountAsync(n)`, `.ToBeTrueAsync()` |
 | FluentAssertions `act.Should().Throw<T>()`, `using new AssertionScope()`, `.Because` | `await Assert.That(act).ToThrowAsync<T>()`, `Assert.MultipleAsync(...)`, `.Because("…")` in front of the assertion |
 | Selenium `IWebDriver`, `FindElement(By…)`, `WebDriverWait`, `driver.Quit()` | `IPageContext.Page` in page objects, `GetByRole`/`GetByLabel`/`Locator`, a web-first assertion, nothing — the session is disposed with the test |
+| `Microsoft.Playwright.NUnit`/`.MSTest`/`.Xunit` `PageTest` base class; `.runsettings` `<Playwright>` `BrowserName`, `LaunchOptions`, `ActionTimeout`, `NavigationTimeout`, `ExpectTimeout` | a page object or `Browser.StartAsync()`; the `Web` section of `precept.json`: `Browser`, `Headless`/`Channel`/`Args`, `TimeoutMilliseconds`, `NavigationTimeoutMilliseconds`, `AssertionTimeoutMilliseconds` |
 | RestSharp/`HttpClient` request and `JsonConvert.DeserializeObject<T>` | `Rest.Get("/path").SendAsync()`, `Assert.That(response).Json<T>()` / `JsonAt("field")` |
 | `.runsettings`, `appsettings.json`, `Environment.GetEnvironmentVariable` | `precept.json` and overlays, a bound settings class, `PRECEPT_*` and `{{env:NAME}}` in test data |
 
